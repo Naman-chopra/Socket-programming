@@ -29,13 +29,13 @@ int main(){
     while(1){
         bzero(recline,100);
         bzero(senline,100);
-        printf("ME: ");
-        fgets(senline,100,stdin);
-        sendto(sockfd, senline,100,0, (struct sockaddr * )&server, sizeof(server));
-
-        // printf("---------wait for respone---------");
         recvfrom(sockfd,recline,100,0, (struct sockaddr *)&server, &addsize);
         printf("\nServer: %s",recline);
+        // printf("ME: ");
+        // fgets(senline,100,stdin);
+        // sendto(sockfd, senline,100,0, (struct sockaddr * )&server, sizeof(server));
+
+        // printf("---------wait for respone---------");
     }
 
 
